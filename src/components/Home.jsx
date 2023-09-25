@@ -1,8 +1,9 @@
 import React from 'react'
 import headerPhoto from './header-photo.jpg'
 import { useRef } from 'react';
-import Foods from './Foods'
-
+import Headline from './Headline'
+import Foods from './Foods';
+import Clients from './ClientsList';
 export default function Home() {
 
 	const ref = useRef(null);
@@ -13,7 +14,7 @@ export default function Home() {
 
 	return (
 		<div>
-			<div className="w-full h-screen bg-gradient-to-r from-violet-800 bg-white-500 flex justify-center items-center bg-gray-900 overflow-hidden">
+			<div className="w-full h-screen bg-gradient-to-r from-violet-800 bg-white-500 flex justify-center items-center bg-gray-900 overflow-hidden md:flex-row">
 				<div className="w-1/2 ml-20">
 					<h1 className="text-5xl md:text-7xl  font-bold text-white">
 						Fitness
@@ -31,7 +32,9 @@ export default function Home() {
 					<img className="header-photo w-4/6 25px mt-10 shadow-2xl opacity-80" src={headerPhoto} alt="man muscles" />
 				</div>
 			</div>
+					<Headline ref={ref}/>
 			<Foods />
+				<Clients />
 		</div>
 	)
 }

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-
-export default function Foods() {
+import React, { forwardRef, useState } from 'react'
+import Clients from './ClientsList'
+import Headline from './Headline'
+ function Foods({text}, ref) {
 	const [selectedPlan, setSelectedPlan] = useState('')
 	const [weight, setWeight] = useState('')
 	const [age, setAge] = useState('')
@@ -34,10 +35,10 @@ export default function Foods() {
 
 		setCaloricNeeds(calculatedCaloricNeeds)
 	}
-
+ 
 	return (
 		<div className="w-full h-full bg-gradient-to-r from-violet-800 to-white-500 flex items-center flex-col bg-gray-900 overflow-hidden">
-			<div className="text-white flex justify-center items-center font-bold text-2xl">Choose your goal</div>
+			<h2 ref={ref} className="text-white flex justify-center items-center font-bold text-2xl" >{text}Choose your goal</h2>
 			<div className="plans flex flex-col justify-center items-center md:flex-row">
 				<div className="plan flex flex-col">
 					<input type="radio" id="loseWeight" name="plan" value="Lose weight" onChange={handlePlanChange} />
@@ -85,3 +86,5 @@ export default function Foods() {
 		</div>
 	)
 }
+
+export default forwardRef(Foods)
