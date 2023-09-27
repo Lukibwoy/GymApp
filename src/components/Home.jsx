@@ -3,7 +3,7 @@ import headerPhoto from './header-photo.jpg'
 import { useRef } from 'react';
 import Headline from './Headline'
 import Foods from './Foods';
-import Clients from './ClientsList';
+import Clients from './MealsList';
 export default function Home() {
 
 	const ref = useRef(null);
