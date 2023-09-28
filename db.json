@@ -1,19 +1,35 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
+    "meals": [
+      {
+        "id": 1,
+        "name": "Chicken",
+        "weightGrams": 100,
+        "caloriesKcal": 450
+      },
+      {
+        "id": 2,
+        "name": "Salad",
+        "weightGrams": 150,
+        "caloriesKcal": 120
+      },
+      {
+        "id": 3,
+        "name": "Pasta",
+        "weightGrams": 200,
+        "caloriesKcal": 350
+      },
+      {
+        "id": 4,
+        "name": "Fish",
+        "weightGrams": 120,
+        "caloriesKcal": 280
+      },
+      {
+        "id": 5,
+        "name": "Pizza",
+        "weightGrams": 300,
+        "caloriesKcal": 600
+      }
+    ]
   }
-}
+  
