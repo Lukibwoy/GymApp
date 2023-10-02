@@ -35,6 +35,18 @@
       "weightGrams": "200",
       "caloriesKcal": "450",
       "id": 8
+    },
+    {
+      "name": "Milk",
+      "weightGrams": "100",
+      "caloriesKcal": "120",
+      "id": 9
+    },
+    {
+      "name": "Apple",
+      "weightGrams": 83,
+      "caloriesKcal": 88,
+      "id": 10
     }
   ]
 }

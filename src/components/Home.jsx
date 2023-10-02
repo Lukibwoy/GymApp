@@ -3,7 +3,7 @@ import headerPhoto from './header-photo.jpg'
 import { useRef } from 'react';
 import Headline from './Headline'
 import Foods from './Foods';
-import Clients from './MealsList';
+import Meals from './Meals/MealsList';
 export default function Home() {
 
 	const ref = useRef(null);
@@ -34,7 +34,7 @@ export default function Home() {
 			</div>
 					<Headline ref={ref}/>
 			<Foods />
-				<Clients />
+				<Meals />
 		</div>
 	)
 }
