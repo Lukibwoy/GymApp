@@ -1,27 +1,9 @@
 import React, { forwardRef, useState } from 'react'
-import { Formik, Field, Form, ErrorMessage } from 'formik'
 function Foods({ text }, ref) {
 	const [selectedPlan, setSelectedPlan] = useState('')
 	const [weight, setWeight] = useState('')
 	const [age, setAge] = useState('')
 	const [caloricNeeds, setCaloricNeeds] = useState(null)
-
-	const initialValues = {
-		weight: '',
-		age: '',
-	}
-
-	const validate = values => {
-		const errors = {}
-
-		if (!values.weight) {
-			errors.weight = 'Required'
-		}
-		if (!values.age) {
-			errors.age = 'Required'
-		}
-		return errors
-	}
 
 	const handlePlanChange = e => {
 		setSelectedPlan(e.target.value)
@@ -72,38 +54,26 @@ function Foods({ text }, ref) {
 				</div>
 			</div>
 			<div className="input-fields space-y-2 flex items-center flex-col">
-				<Formik initialValues={initialValues} validate={validate} onSubmit={calculateCaloricNeeds}>
-					{() => (
-						<Form>
-							<div className="input-fields space-y-2 flex items-center flex-col">
-								<label htmlFor="weight" className="text-white ">
-									Weight (in kg):{' '}
-								</label>
-								<Field
-									type="number"
-									id="weight"
-									name="weight"
-									min="0"
-									onKeyUp={handleWeightChange}
-									className="border rounded-md py-2 px-3 text-center"
-								/>
-								<ErrorMessage name="weight" component="div" className="text-red-600" />
-								<label htmlFor="age" className="text-white">
-									Age:{' '}
-								</label>
-								<Field
-									type="number"
-									id="age"
-									name="age"
-									min="0"
-									onKeyUp={handleAgeChange}
-									className="border rounded-md py-2 px-3 text-center"
-								/>
-								<ErrorMessage name="age" component="div" className="text-red-600" />
-							</div>
-						</Form>
-					)}
-				</Formik>
+				<label htmlFor="weight" className="text-white ">
+					Weight (in kg):{' '}
+				</label>
+				<input
+					type="number"
+					id="weight"
+					value={weight}
+					onChange={handleWeightChange}
+					className="border rounded-md py-2 px-3 text-center"
+				/>
+				<label htmlFor="age" className="text-white">
+					Age:{' '}
+				</label>
+				<input
+					type="number"
+					id="age"
+					value={age}
+					onChange={handleAgeChange}
+					className="border rounded-md py-2 px-3 text-center"
+				/>
 			</div>
 			<button
 				onClick={calculateCaloricNeeds}
