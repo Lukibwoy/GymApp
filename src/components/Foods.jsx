@@ -9,6 +9,7 @@ function Foods({ text }, ref) {
 	const initialValues = {
 		weight: '',
 		age: '',
+		plan: '',
 	}
 
 	const validate = values => {
@@ -20,8 +21,14 @@ function Foods({ text }, ref) {
 		if (!values.age) {
 			errors.age = 'Required'
 		}
+
+		if (!values.plan) {
+			errors.plan = 'Select a plan';
+		  }
 		return errors
 	}
+
+	console.log(selectedPlan)
 
 	const handlePlanChange = e => {
 		setSelectedPlan(e.target.value)
@@ -59,15 +66,15 @@ function Foods({ text }, ref) {
 			</h2>
 			<div className="plans flex flex-col justify-center items-center md:flex-row">
 				<div className="plan flex flex-col">
-					<input type="radio" id="loseWeight" name="plan" value="Lose weight" onChange={handlePlanChange} />
-					<label htmlFor="loseWeight">Lose weight</label>
+					<input type="radio" id="loseWeight" name="selectedPlan" value="Lose weight" onChange={handlePlanChange} />
+					<label htmlFor="loseWeight">Lose weight </label>
 				</div>
 				<div className="plan flex flex-col">
-					<input type="radio" id="gainMuscle" name="plan" value="Gain Muscle Mass" onChange={handlePlanChange} />
+					<input type="radio" id="gainMuscle" name="selectedPlan" value="Gain Muscle Mass" onChange={handlePlanChange} />
 					<label htmlFor="gainMuscle">Gain Muscle Mass</label>
 				</div>
 				<div className="plan flex flex-col">
-					<input type="radio" id="getShredded" name="plan" value="Get Shredded" onChange={handlePlanChange} />
+					<input type="radio" id="getShredded" name="selectedPlan" value="Get Shredded" onChange={handlePlanChange} />
 					<label htmlFor="getShredded">Get Shredded</label>
 				</div>
 			</div>
@@ -75,6 +82,22 @@ function Foods({ text }, ref) {
 				<Formik initialValues={initialValues} validate={validate} onSubmit={calculateCaloricNeeds}>
 					{() => (
 						<Form>
+							{/* <div className="plans flex flex-col justify-center items-center md:flex-row">
+								<div className="plan flex flex-col">
+									<Field type="radio" id="loseWeight" name="selectedPlan" value="Lose weight" onKeyUp={handlePlanChange} />
+									<label htmlFor="loseWeight">Lose weight</label>
+								</div>
+								<div className="plan flex flex-col">
+									<Field type="radio" id="gainMuscle" name="selectedPlan" value="Gain Muscle Mass" onKeyUp={handlePlanChange} />
+									<label htmlFor="gainMuscle">Gain Muscle Mass</label>
+								</div>
+								<div className="plan flex flex-col">
+									<Field type="radio" id="getShredded" name="selectedPlan" value="Get Shredded" onKeyUp={handlePlanChange} />
+									<label htmlFor="getShredded">Get Shredded</label>
+								</div>
+							</div>
+							<ErrorMessage name="plan" component="div" className="text-red-600" /> */}
+							
 							<div className="input-fields space-y-2 flex items-center flex-col">
 								<label htmlFor="weight" className="text-white ">
 									Weight (in kg):{' '}
@@ -111,7 +134,7 @@ function Foods({ text }, ref) {
 				Calculate Caloric Demand
 			</button>
 			{caloricNeeds !== null && (
-				<div className="text-white mt-4">Your estimated caloric needs: {caloricNeeds} kcal per day</div>
+				<div className="text-white mt-4 text-xl">Your estimated caloric needs   {caloricNeeds} kcal per day</div>
 			)}
 		</div>
 	)

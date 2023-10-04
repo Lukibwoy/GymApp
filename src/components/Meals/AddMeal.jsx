@@ -55,7 +55,7 @@ export default function AddMeal({ updateMealsList }) {
 							<Form>
 								<div className="mb-4">
 									<Field type="text" name="name" placeholder="Meal Name" className="w-full border rounded p-2" />
-									<ErrorMessage name="name" component="div" className="text-red-500" />
+									<ErrorMessage name="name" component="div" className="text-red-500 text-center" />
 								</div>
 								<div className="mb-4">
 									<Field
@@ -65,7 +65,7 @@ export default function AddMeal({ updateMealsList }) {
 										min="0"
 										className="w-full border rounded p-2"
 									/>
-									<ErrorMessage name="weightGrams" component="div" className="text-red-500" />
+									<ErrorMessage name="weightGrams" component="div" className="text-red-500 text-center" />
 								</div>
 								<div className="mb-4">
 									<Field
@@ -74,7 +74,7 @@ export default function AddMeal({ updateMealsList }) {
 										placeholder="Calories (Kcal)"
 										className="w-full border rounded p-2"
 									/>
-									<ErrorMessage name="caloriesKcal" component="div" className="text-red-500" />
+									<ErrorMessage name="caloriesKcal" component="div" className="text-red-500 text-center" />
 								</div>
 								<div className="text-center">
 									<button
