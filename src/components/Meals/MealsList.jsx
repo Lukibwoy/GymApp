@@ -5,9 +5,9 @@ import AddMeal from './AddMeal'
 
 export default function Meals() {
 	const [meals, setMeals] = useState([])
-	const updateMealsList = (newMeal) => {
-		setMeals([...meals, newMeal]);
-	  };
+	const updateMealsList = newMeal => {
+		setMeals([...meals, newMeal])
+	}
 	useEffect(() => {
 		axios
 			.get(`http://localhost:3020/meals`)
@@ -30,6 +30,14 @@ export default function Meals() {
 			.catch(error => {
 				console.erorr('Error deleting meal', error)
 			})
+	}
+
+	const getTotalCalories = () => {
+		let totalCalories = 0
+		meals.forEach(meal => {
+			totalCalories += meal.caloriesKcal
+		})
+		return totalCalories
 	}
 
 	return (
@@ -69,6 +77,9 @@ export default function Meals() {
 				</tbody>
 			</table>
 			<AddMeal updateMealsList={updateMealsList} />
+			<div className="mt-4 text-white">
+				<p>Total Calories: {getTotalCalories()} Kcal</p>
+			</div>
 		</div>
 	)
 }
