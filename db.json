@@ -43,10 +43,16 @@
       "id": 9
     },
     {
-      "name": "Apple",
-      "weightGrams": 83,
-      "caloriesKcal": 88,
+      "name": "xxx",
+      "weightGrams": 22,
+      "caloriesKcal": 22,
       "id": 10
+    },
+    {
+      "name": "xxx",
+      "weightGrams": 22,
+      "caloriesKcal": 22,
+      "id": 11
     }
   ]
 }
