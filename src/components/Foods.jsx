@@ -5,7 +5,7 @@ function Foods({ text }, ref) {
 	const [weight, setWeight] = useState('')
 	const [age, setAge] = useState('')
 	const [caloricNeeds, setCaloricNeeds] = useState(null)
-
+	const [calculatedCaloricNeeds, setCalculatedCaloricNeeds] = useState(0); // Deklaruj calculatedCaloricNeeds w komponencie Meals
 	const initialValues = {
 		weight: '',
 		age: '',
@@ -141,3 +141,4 @@ function Foods({ text }, ref) {
 }
 
 export default forwardRef(Foods)
+		 
