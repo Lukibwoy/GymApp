@@ -1,11 +1,10 @@
 import React, { forwardRef, useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
-function Foods({ text }, ref) {
+function Goal({ text }, ref) {
 	const [selectedPlan, setSelectedPlan] = useState('')
 	const [weight, setWeight] = useState('')
 	const [age, setAge] = useState('')
 	const [caloricNeeds, setCaloricNeeds] = useState(null)
-
 	const initialValues = {
 		weight: '',
 		age: '',
@@ -62,7 +61,7 @@ function Foods({ text }, ref) {
 	return (
 		<div className="w-full h-full bg-gradient-to-r from-violet-800 to-white-500 flex items-center flex-col bg-gray-900 overflow-hidden">
 			<h2 ref={ref} className="text-white flex justify-center items-center font-bold text-2xl">
-				{text}Choose your goal
+				{text}
 			</h2>
 			<div className="plans flex flex-col justify-center items-center md:flex-row">
 				<div className="plan flex flex-col">
@@ -140,4 +139,5 @@ function Foods({ text }, ref) {
 	)
 }
 
-export default forwardRef(Foods)
+export default forwardRef(Goal)
+		 

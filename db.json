@@ -32,27 +32,15 @@
     },
     {
       "name": "Kebab",
-      "weightGrams": "200",
-      "caloriesKcal": "450",
-      "id": 8
+      "weightGrams": 180,
+      "caloriesKcal": 600,
+      "id": 6
     },
     {
-      "name": "Milk",
-      "weightGrams": "100",
-      "caloriesKcal": "120",
-      "id": 9
-    },
-    {
-      "name": "xxx",
-      "weightGrams": 22,
-      "caloriesKcal": 22,
-      "id": 10
-    },
-    {
-      "name": "xxx",
-      "weightGrams": 22,
-      "caloriesKcal": 22,
-      "id": 11
+      "name": "Buritto",
+      "weightGrams": 200,
+      "caloriesKcal": 800,
+      "id": 7
     }
   ]
 }
