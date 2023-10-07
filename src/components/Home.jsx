@@ -2,11 +2,11 @@ import React from 'react'
 import headerPhoto from './header-photo.jpg'
 import { useRef } from 'react';
 import Headline from './Headline'
-import Foods from './Foods';
+import Goal from './Goal';
 import Meals from './Meals/MealsList';
 import { useTypewriter} from 'react-simple-typewriter'
 import Footer from './Footer';
-
+import GoalInfo from './GoalInfo';
 export default function Home() {
 
 	const ref = useRef(null);
@@ -27,7 +27,7 @@ export default function Home() {
 		
 	return (
 		<div>
-			<div className="w-full h-scren bg-gradient-to-r from-violet-800 bg-white-500 flex justify-center items-center bg-gray-900 overflow-hidden md:flex-row">
+			<div className="w-full h-scren bg-gradient-to-r from-violet-800 bg-white-500 flex justify-center flex-col items-center bg-gray-900  md:flex-row">
 				<div className="w-1/2 ml-20">
 				<h1 className="text-5xl md:text-7xl  font-bold text-white">
 				<span>{typeEffect}</span>
@@ -41,12 +41,13 @@ export default function Home() {
 						Get Started
 					</button>
 				</div>
-				<div className="hidden md:block w-1/2 h-full">
+				<div className=" w-1/2 h-full">
 					<img className="header-photo w-4/6 25px mt-10 shadow-2xl opacity-80" src={headerPhoto} alt="man muscles" />
 				</div>
 			</div>
 					<Headline ref={ref}/>
-			<Foods />
+					<GoalInfo/>
+			<Goal />
 				<Meals />
 				<Footer />
 		</div>
