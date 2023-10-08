@@ -1,6 +1,9 @@
-import React, { forwardRef, useState } from 'react'
+import React, { useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
-function Goal({ text }, ref) {
+import man1 from '../images/man1.webp'
+import man2 from '../images/man2.webp'
+import man3 from '../images/man3.webp'
+function Goal() {
 	const [selectedPlan, setSelectedPlan] = useState('')
 	const [weight, setWeight] = useState('')
 	const [age, setAge] = useState('')
@@ -22,8 +25,8 @@ function Goal({ text }, ref) {
 		}
 
 		if (!values.plan) {
-			errors.plan = 'Select a plan';
-		  }
+			errors.plan = 'Select a plan'
+		}
 		return errors
 	}
 
@@ -60,19 +63,25 @@ function Goal({ text }, ref) {
 
 	return (
 		<div className="w-full h-full bg-gradient-to-r from-violet-800 to-white-500 flex items-center flex-col bg-gray-900 overflow-hidden">
-			<h2 ref={ref} className="text-white flex justify-center items-center font-bold text-2xl">
-				{text}
-			</h2>
 			<div className="plans flex flex-col justify-center items-center md:flex-row">
 				<div className="plan flex flex-col">
+					<img src={man3} className="w-1/4" alt="lose weight" />
 					<input type="radio" id="loseWeight" name="selectedPlan" value="Lose weight" onChange={handlePlanChange} />
 					<label htmlFor="loseWeight">Lose weight </label>
 				</div>
 				<div className="plan flex flex-col">
-					<input type="radio" id="gainMuscle" name="selectedPlan" value="Gain Muscle Mass" onChange={handlePlanChange} />
+					<img src={man1} className="w-1/4" alt="lose weight" />
+					<input
+						type="radio"
+						id="gainMuscle"
+						name="selectedPlan"
+						value="Gain Muscle Mass"
+						onChange={handlePlanChange}
+					/>
 					<label htmlFor="gainMuscle">Gain Muscle Mass</label>
 				</div>
 				<div className="plan flex flex-col">
+				<img src={man2} className="w-1/4" alt="lose weight" />
 					<input type="radio" id="getShredded" name="selectedPlan" value="Get Shredded" onChange={handlePlanChange} />
 					<label htmlFor="getShredded">Get Shredded</label>
 				</div>
@@ -96,7 +105,7 @@ function Goal({ text }, ref) {
 								</div>
 							</div>
 							<ErrorMessage name="plan" component="div" className="text-red-600" /> */}
-							
+
 							<div className="input-fields space-y-2 flex items-center flex-col">
 								<label htmlFor="weight" className="text-white ">
 									Weight (in kg):{' '}
@@ -133,11 +142,10 @@ function Goal({ text }, ref) {
 				Calculate Caloric Demand
 			</button>
 			{caloricNeeds !== null && (
-				<div className="text-white mt-4 text-xl">Your estimated caloric needs   {caloricNeeds} kcal per day</div>
+				<div className="text-white mt-4 text-xl">Your estimated caloric needs {caloricNeeds} kcal per day</div>
 			)}
 		</div>
 	)
 }
 
-export default forwardRef(Goal)
-		 
+export default Goal
