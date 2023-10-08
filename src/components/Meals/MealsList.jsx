@@ -38,7 +38,7 @@ export default function Meals() {
 	
 
 	return (
-		<div 	className="w-full h-screen bg-gradient-to-r from-violet-800 to-white-500  bg-gray-900 overflow-hidden md:flex-row">
+		<div 	className="w-full h-3/4 bg-gradient-to-r from-violet-800 to-white-500  bg-gray-900 overflow-hidden md:flex-row">
 				<div className='flex justify-center flex-col items-center mt-20 md:flex-row'>
 				<table className="table-auto bg-white shadow-lg rounded-lg w-2/4 h-1/5">
 					<thead>

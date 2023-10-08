@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './logo2.svg'
+import logo from './images/logo2.svg'
 export default function Logo() {
 	return (
 		<div className="logo h-24 w-24">
