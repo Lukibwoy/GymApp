@@ -41,6 +41,12 @@
       "weightGrams": 200,
       "caloriesKcal": 800,
       "id": 7
+    },
+    {
+      "name": "Jablko",
+      "weightGrams": 80,
+      "caloriesKcal": 60,
+      "id": 9
     }
   ]
 }
