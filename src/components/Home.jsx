@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import headerPhoto from './images/header-photo.jpg'
 import { useRef } from 'react'
 import Headline from './Headline'
@@ -21,6 +21,8 @@ export default function Home() {
 		typeSpeed: 80,
 		deleteSpeed: 40,
 	})
+	const [caloricNeeds, setCaloricNeeds] = useState(null)
+
 
 	return (
 		<div>
@@ -46,8 +48,8 @@ export default function Home() {
 			</div>
 			<Headline ref={ref} />
 			<GoalInfo />
-			<Goal />
-			<Meals />
+			<Goal  caloricNeeds={caloricNeeds} setCaloricNeeds={setCaloricNeeds}/>
+			<Meals caloricNeeds={caloricNeeds}/>
 			<GoalSummary />
 			<Footer />
 		</div>

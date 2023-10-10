@@ -4,8 +4,9 @@ import axios from 'axios'
 import AddMeal from './AddMeal'
 import TotalCalories from './TotalCalories'
 
-export default function Meals() {
+export default function Meals({ caloricNeeds, setCaloricNeeds }) {
 	const [meals, setMeals] = useState([])
+	
 	const updateMealsList = newMeal => {
 		setMeals([...meals, newMeal])
 	}
@@ -33,13 +34,9 @@ export default function Meals() {
 			})
 	}
 
-	
-
-	
-
 	return (
-		<div 	className="w-full h-3/4 bg-gradient-to-r from-violet-800 to-white-500  bg-gray-900 overflow-hidden md:flex-row">
-				<div className='flex justify-center flex-col items-center mt-20 md:flex-row'>
+		<div className="w-full h-3/4 bg-gradient-to-r from-violet-800 to-white-500  bg-gray-900 overflow-hidden md:flex-row">
+			<div className="flex justify-center flex-col items-center mt-20 md:flex-row">
 				<table className="table-auto bg-white shadow-lg rounded-lg w-2/4 h-1/5">
 					<thead>
 						<tr>
@@ -76,7 +73,7 @@ export default function Meals() {
 				</table>
 				<AddMeal updateMealsList={updateMealsList} />
 			</div>
-			<TotalCalories meals={meals}/>
+			<TotalCalories meals={meals} caloricNeeds={caloricNeeds}/>
 		</div>
 	)
 }
