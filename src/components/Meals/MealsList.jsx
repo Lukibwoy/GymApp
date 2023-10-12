@@ -4,7 +4,7 @@ import axios from 'axios'
 import AddMeal from './AddMeal'
 import TotalCalories from './TotalCalories'
 
-export default function Meals({ caloricNeeds, setCaloricNeeds }) {
+export default function Meals({ caloricNeeds}) {
 	const [meals, setMeals] = useState([])
 	
 	const updateMealsList = newMeal => {
@@ -74,6 +74,7 @@ export default function Meals({ caloricNeeds, setCaloricNeeds }) {
 				<AddMeal updateMealsList={updateMealsList} />
 			</div>
 			<TotalCalories meals={meals} caloricNeeds={caloricNeeds}/>
+		
 		</div>
 	)
 }

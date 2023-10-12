@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Chicken",
       "weightGrams": 100,
-      "caloriesKcal": 450
+      "caloriesKcal": 55
     },
     {
       "id": 2,
@@ -29,6 +29,18 @@
       "name": "Pizza",
       "weightGrams": 300,
       "caloriesKcal": 600
+    },
+    {
+      "name": "Mc",
+      "weightGrams": 222,
+      "caloriesKcal": 1600,
+      "id": 6
+    },
+    {
+      "name": "Rise",
+      "weightGrams": 100,
+      "caloriesKcal": 200,
+      "id": 7
     }
   ]
 }

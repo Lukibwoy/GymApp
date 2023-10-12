@@ -34,8 +34,6 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 		return errors
 	}
 
-	console.log(selectedPlan)
-
 	const handlePlanChange = e => {
 		setSelectedPlan(e.target.value)
 	}
@@ -65,17 +63,16 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 		setCaloricNeeds(calculatedCaloricNeeds)
 	}
 
-	console.log(caloricNeeds)
 	return (
 		<div className="w-full h-full bg-gradient-to-r from-violet-800 to-white-500 flex items-center flex-col bg-gray-900 overflow-hidden">
-			<div className="plans flex flex-col justify-center items-center md:flex-row">
+			<div className="w-full h-full plans flex flex-col justify-center items-center  md:flex-row">
 				<div className="plan flex flex-col">
 					<img src={man3} className="w-1/4" alt="lose weight" />
 					<input type="radio" id="loseWeight" name="selectedPlan" value="Lose weight" onChange={handlePlanChange} />
 
 					<label htmlFor="loseWeight">Lose weight </label>
 				</div>
-				<div className="plan flex flex-col">
+				<div className="plan flex flex-col ">
 					<img src={man1} className="w-1/4" alt="lose weight" />
 					<input
 						type="radio"

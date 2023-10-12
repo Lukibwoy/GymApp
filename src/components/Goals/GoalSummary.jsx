@@ -5,7 +5,7 @@ export default function GoalSummary() {
 	return (
 		<div className="w-full h-full bg-gradient-to-r from-violet-800 bg-white-500 flex items-center flex-col bg-gray-900 overflow-hidden p-10">
 			<motion.div
-				className="border-2 border-yellow-600 rounded-xl m-5"
+				className="border-2 border-yellow-600 rounded-xl m-6"
 				initial={{ opacity: 0, x: -100, y: -100 }}
 				animate={{ opacity: 1, x: 0, y: 0 }}
 				transition={{ duration: 0.5, type: 'spring', stiffness: 250 }}>

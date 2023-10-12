@@ -88,6 +88,7 @@ export default function AddMeal({ updateMealsList }) {
 					</Formik>
 				</div>
 			</div>
+		
 		</div>
 	)
 }
