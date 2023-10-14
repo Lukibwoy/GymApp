@@ -13,11 +13,11 @@ function GoalInfo({ text }, ref) {
 					<h2 ref={ref} className="text-4xl lg:text-5xl font-bold mb-4">
 						Why Choose a Fitness Goal? {text}
 					</h2>
-					<p className="text-xl mt-5 p-2 md:p-10 md:text-2xl">
+					<p className="text-lg mt-5 md:p-10 md:text-2xl">
 						By setting a specific fitness goal, you can focus more on your aspirations and achieve better results. This
 						helps you stay motivated and track your progress towards your fitness and healthy lifestyle goals.
 					</p>
-					<p className="text-xl mt-5 p-2 md:p-10 md:text-2xl">
+					<p className="text-lg mt-5 md:p-10 md:text-2xl">
 						Whether you want to gain muscle mass, lose weight, or improve your physical fitness, defining a goal will
 						allow you to develop a more effective exercise and dietary plan.
 					</p>

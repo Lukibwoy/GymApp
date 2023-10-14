@@ -145,7 +145,7 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 				Calculate Caloric Demand
 			</button>
 			{caloricNeeds !== null && (
-				<div className="text-white mt-4 text-xl">Your estimated caloric needs {caloricNeeds} kcal per day</div>
+				<div className="text-white mt-4 text-xl text-center">Your estimated caloric needs {caloricNeeds} kcal per day</div>
 			)}
 		</div>
 	)

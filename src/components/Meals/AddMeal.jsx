@@ -48,7 +48,7 @@ export default function AddMeal({ updateMealsList }) {
 	return (
 		<div>
 			<div className="flex justify-center w-1/1 h-3/7 m-10">
-				<div className="bg-white shadow-lg rounded-lg p-4 w-3/4 ">
+				<div className="bg-white shadow-lg rounded-lg p-4 w-full ">
 					<h2 className="text-xl font-semibold mb-4">Add New Meal</h2>
 					<Formik initialValues={initialValues} validate={validate} onSubmit={handleSubmit}>
 						{() => (
