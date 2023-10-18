@@ -1,7 +1,4 @@
-// W komponencie TotalCalories.js
-import React from 'react'
-
-export default function TotalCalories({ meals, calculatedCaloricNeeds }) {
+export default function TotalCalories({ meals, caloricNeeds }) {
 	const getTotalCalories = () => {
 		let totalCalories = 0
 		meals.forEach(meal => {
@@ -11,14 +8,17 @@ export default function TotalCalories({ meals, calculatedCaloricNeeds }) {
 	}
 
 	const restOfCalories = () => {
-		const rest = calculatedCaloricNeeds - getTotalCalories()
+		const rest = caloricNeeds - getTotalCalories()
 		return rest
 	}
 
 	return (
 		<div>
 			<p className="text-center text-white mt-4 text-xl">Total Calories: {getTotalCalories()} Kcal</p>
-			<p className='text-center text-white mt-4 text-xl'>Remaining Calories: {restOfCalories()} Kcal</p>
+			<p className="text-center text-white mt-4 text-xl">Remaining Calories: {restOfCalories()} Kcal</p>
+			{restOfCalories() < 0 && (
+				<p className="text-center text-white mt-3 text-3xl">Done! You achieved your goal for this day!</p>
+			)}
 		</div>
 	)
-}
+}	

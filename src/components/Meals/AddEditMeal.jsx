@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
-export default function AddMeal({ updateMealsList }) {
+
+export default function AddEditMeal({ updateMealsList, editingMeal, isEditing, cancelEdit }) {
 	const initialValues = {
 		name: '',
 		weightGrams: '',
@@ -10,7 +11,6 @@ export default function AddMeal({ updateMealsList }) {
 
 	const validate = values => {
 		const errors = {}
-
 		if (!values.name) {
 			errors.name = 'Required'
 		}
@@ -33,24 +33,41 @@ export default function AddMeal({ updateMealsList }) {
 	}
 
 	const handleSubmit = (values, { resetForm }) => {
-		axios
-			.post('http://localhost:3020/meals', values)
-			.then(response => {
-				console.log(response)
-				updateMealsList(response.data)
-				resetForm(initialValues)
-			})
-			.catch(error => {
-				console.error('Something went wrong with adding a meal', error)
-			})
+		if (isEditing) {
+			axios
+				.put(`http://localhost:3020/meals/${editingMeal.id}`, values)
+				.then(response => {
+					console.log(response)
+					updateMealsList(response.data)
+					cancelEdit()
+				})
+				.catch(error => {
+					console.error('Coś poszło nie tak podczas aktualizacji posiłku', error)
+				})
+		} else {
+			axios
+				.post('http://localhost:3020/meals', values)
+				.then(response => {
+					console.log(response)
+					updateMealsList(response.data)
+				})
+				.catch(error => {
+					console.error('Coś poszło nie tak podczas dodawania posiłku', error)
+				})
+		}
+		resetForm(initialValues)
 	}
 
 	return (
 		<div>
 			<div className="flex justify-center w-1/1 h-3/7 m-10">
-				<div className="bg-white shadow-lg rounded-lg p-4 w-3/4 ">
-					<h2 className="text-xl font-semibold mb-4">Add New Meal</h2>
-					<Formik initialValues={initialValues} validate={validate} onSubmit={handleSubmit}>
+				<div className="bg-white shadow-lg rounded-lg p-4 w-full ">
+					<h2 className="text-xl font-semibold mb-4">{isEditing ? 'Edit Meal' : 'Add Meal'}</h2>
+					<Formik
+						initialValues={isEditing ? editingMeal : initialValues}
+						enableReinitialize={true}
+						validate={validate}
+						onSubmit={handleSubmit}>
 						{() => (
 							<Form>
 								<div className="mb-4">
@@ -61,7 +78,7 @@ export default function AddMeal({ updateMealsList }) {
 									<Field
 										type="number"
 										name="weightGrams"
-										placeholder="Weight (g)"
+										placeholder="Waga (g)"
 										min="0"
 										className="w-full border rounded p-2"
 									/>
@@ -80,8 +97,16 @@ export default function AddMeal({ updateMealsList }) {
 									<button
 										type="submit"
 										className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-										Add Meal
+										{isEditing ? 'Save' : 'Add Meal'}
 									</button>
+									{isEditing && (
+										<button
+											type="button"
+											className="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded ml-2"
+											onClick={cancelEdit}>
+											Cancel
+										</button>
+									)}
 								</div>
 							</Form>
 						)}

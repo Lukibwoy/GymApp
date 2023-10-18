@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import headerPhoto from './images/header-photo.jpg'
 import { useRef } from 'react'
 import Headline from './Headline'
@@ -21,17 +21,18 @@ export default function Home() {
 		typeSpeed: 80,
 		deleteSpeed: 40,
 	})
+	const [caloricNeeds, setCaloricNeeds] = useState(null)
 
 	return (
 		<div>
 			<div className="w-full h-scren bg-gradient-to-r from-violet-800 bg-white-500 flex justify-center flex-col items-center bg-gray-900  md:flex-row">
-				<div className="w-1/2 ml-20">
+				<div className="w-2/3 md:w-1/2 md:ml-20">
 					<h1 className="text-5xl md:text-7xl  font-bold text-white">
 						<span>{typeEffect}</span>
 						<br />
 						Assistant
 					</h1>
-					<p className="mt-5 text-white">
+					<p className="mt-5 text-white text-lg md:text-xl">
 						In here we will help you to shape and build your ideal body and live up your life to fullest
 					</p>
 					<button
@@ -40,14 +41,18 @@ export default function Home() {
 						Get Started
 					</button>
 				</div>
-				<div className=" w-1/2 h-full">
-					<img className="header-photo w-4/6 25px mt-10 shadow-2xl opacity-80" src={headerPhoto} alt="man muscles" />
+				<div className=" w-full sm:w-1/2 h-full ">
+					<img
+						className="header-photo w-full md:w-4/6 h-full object-cover mt-10 shadow-2xl opacity-80 "
+						src={headerPhoto}
+						alt="man muscles"
+					/>
 				</div>
 			</div>
 			<Headline ref={ref} />
 			<GoalInfo />
-			<Goal />
-			<Meals />
+			<Goal caloricNeeds={caloricNeeds} setCaloricNeeds={setCaloricNeeds} />
+			<Meals caloricNeeds={caloricNeeds} />
 			<GoalSummary />
 			<Footer />
 		</div>
