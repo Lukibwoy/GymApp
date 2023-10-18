@@ -3,11 +3,6 @@ import { Formik, Field, Form, ErrorMessage } from 'formik'
 import man1 from '../images/man1.webp'
 import man2 from '../images/man2.webp'
 import man3 from '../images/man3.webp'
-// w komponencie Goal mamy state caloricNeeds, chcemy z tego state skorzystać w komponencie TotalCalories
-// App -> Home -> Goal
-// App -> Home -> MealsList -> TotalCalories
-// 1. przenieść state caloricNeeds z komponentu Goal do Home (najmłodsy wspólny prodek komponentów TotalCalories i Goal)
-// 2. wykonać prop drilling do komponentów 1. Goal, 2. TotalCalories (za pośrednictwem MealsList)
 function Goal({ caloricNeeds, setCaloricNeeds }) {
 	const [selectedPlan, setSelectedPlan] = useState(false)
 	const [weight, setWeight] = useState('')

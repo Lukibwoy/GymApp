@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import { Link } from 'react-scroll'
 import Logo from './Logo'
-
+import { useRef } from 'react'
 const NavLinks = ({ mobile }) => {
 	const commonClasses = 'text-white hover:text-black'
 	const mobileClasses = 'text-white hover:text-black-300 font-bold'
@@ -13,10 +14,14 @@ const NavLinks = ({ mobile }) => {
 				Home
 			</NavLink>
 			<NavLink to="/plans" className={mobile ? mobileClasses : commonClasses} activeClassName="font-bold">
-				Plans
+				<Link activeClass="active" to="plans" spy={true} smooth={true} offset={50} duration={500}>
+					Plans
+				</Link>
 			</NavLink>
 			<NavLink to="/contact" className={mobile ? mobileClasses : commonClasses} activeClassName="font-bold">
-				Contact
+				<Link activeClass="active" to="contact" spy={true} smooth={true} offset={50} duration={500}>
+					Contact
+				</Link>
 			</NavLink>
 		</div>
 	)

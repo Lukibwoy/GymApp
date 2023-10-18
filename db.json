@@ -15,7 +15,7 @@
     {
       "name": "Fish",
       "weightGrams": 150,
-      "caloriesKcal": 400,
+      "caloriesKcal": 450,
       "id": 4
     },
     {
@@ -31,21 +31,15 @@
       "id": 6
     },
     {
-      "name": "chipsy",
+      "name": "Chipsy",
       "weightGrams": 80,
       "caloriesKcal": 300,
       "id": 8
     },
     {
-      "name": "Salami",
-      "weightGrams": 80,
-      "caloriesKcal": 100,
-      "id": 9
-    },
-    {
-      "name": "www",
-      "weightGrams": 2,
-      "caloriesKcal": 2,
+      "name": "Frytki",
+      "weightGrams": 300,
+      "caloriesKcal": 400,
       "id": 10
     }
   ]
