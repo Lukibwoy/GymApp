@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Link } from 'react-scroll'
 import Logo from './Logo'
-import { useRef } from 'react'
 const NavLinks = ({ mobile }) => {
 	const commonClasses = 'text-white hover:text-black'
 	const mobileClasses = 'text-white hover:text-black-300 font-bold'

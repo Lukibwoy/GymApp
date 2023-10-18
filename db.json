@@ -41,6 +41,12 @@
       "weightGrams": 300,
       "caloriesKcal": 400,
       "id": 10
+    },
+    {
+      "name": "w2",
+      "weightGrams": 2,
+      "caloriesKcal": 3,
+      "id": 11
     }
   ]
 }
