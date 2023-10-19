@@ -24,8 +24,8 @@ export default function Home() {
 	const [caloricNeeds, setCaloricNeeds] = useState(null)
 
 	return (
-		<div>
-			<div className="w-full h-scren bg-gradient-to-r from-violet-800 bg-white-500 flex justify-center flex-col items-center bg-gray-900  md:flex-row">
+		<div id='home'>
+			<div  className="w-full h-scren bg-gradient-to-r from-violet-800 bg-white-500 flex justify-center flex-col items-center bg-gray-900  md:flex-row">
 				<div className="w-2/3 md:w-1/2 md:ml-20">
 					<h1 className="text-5xl md:text-7xl  font-bold text-white">
 						<span>{typeEffect}</span>
