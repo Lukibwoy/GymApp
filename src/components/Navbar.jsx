@@ -1,27 +1,34 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { X } from 'lucide-react'
 import { Link } from 'react-scroll'
 import Logo from './Logo'
-const NavLinks = ({ mobile }) => {
-	const commonClasses = 'text-white hover:text-black'
+
+const NavLinksMobile = ({ closeNav }) => {
 	const mobileClasses = 'text-white hover:text-black-300 font-bold'
 
 	return (
-		<div className={mobile ? 'flex flex-col space-y-12 mt-4' : 'md:flex space-x-20 mr-20'}>
-			<NavLink to="/" exact className={mobile ? mobileClasses : commonClasses} activeClassName="font-bold">
-				Home
-			</NavLink>
-			<NavLink to="/plans" className={mobile ? mobileClasses : commonClasses} activeClassName="font-bold">
-				<Link activeClass="active" to="plans" spy={true} smooth={true} offset={50} duration={500}>
-					Plans
-				</Link>
-			</NavLink>
-			<NavLink to="/contact" className={mobile ? mobileClasses : commonClasses} activeClassName="font-bold">
-				<Link activeClass="active" to="contact" spy={true} smooth={true} offset={50} duration={500}>
-					Contact
-				</Link>
-			</NavLink>
+		<div  className="fixed top-0 right-0 w-64 h-full bg-gray-900 opacity-90 p-4 z-50 transition-transform duration-300 transform translate-x-0">
+			<button onClick={closeNav} className="absolute top-8 right-1">
+				<X className="text-white" size="32" />
+			</button>
+			<div className="flex flex-col space-y-12 mt-4">
+				<NavLink to="/" exact className={mobileClasses} activeClassName="font-bold" onClick={closeNav}>
+					<Link activeClass="active" to="home" spy={true} smooth={true} offset={50} duration={500}>
+						Home
+					</Link>
+				</NavLink>
+				<NavLink to="/plans" className={mobileClasses} activeClassName="font-bold" onClick={closeNav}>
+					<Link activeClass="active" to="plans" spy={true} smooth={true} offset={50} duration={500}>
+						Plans
+					</Link>
+				</NavLink>
+				<NavLink to="/contact" className={mobileClasses} activeClassName="font-bold" onClick={closeNav}>
+					<Link activeClass="active" to="contact" spy={true} smooth={true} offset={50} duration={500}>
+						Contact
+					</Link>
+				</NavLink>
+			</div>
 		</div>
 	)
 }
@@ -29,32 +36,48 @@ const NavLinks = ({ mobile }) => {
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
-	const ToggleNav = () => {
+	const toggleNav = () => {
 		setIsOpen(!isOpen)
 	}
 
+	const closeNav = () => {
+		setIsOpen(false)
+	}
+
 	return (
-		<nav className="bg-gradient-to-r from-violet-800 bg-white-500 bg-gray-900  p-1">
-			<div className="container mx-auto flex justify-between items-center">
-				<Logo />
-				<div className="md:flex hidden">
-					<NavLinks />
+		<div>
+			<nav className="bg-gradient-to-r from-violet-800 bg-white-500 bg-gray-900 p-1">
+				<div className="container mx-auto flex justify-between items-center">
+					<Logo />
+					<div className="md:flex hidden">
+						<div className="flex space-x-20 mr-20">
+							<NavLink to="/" className="text-white hover:text-black" activeClassName="font-bold">
+								<Link activeClass="active" to="/" spy={true} smooth={true} offset={50} duration={500}>
+									Home
+								</Link>
+							</NavLink>
+							<NavLink to="/plans" className="text-white hover:text-black" activeClassName="font-bold">
+								<Link activeClass="active" to="plans" spy={true} smooth={true} offset={50} duration={500}>
+									Plans
+								</Link>
+							</NavLink>
+							<NavLink to="/contact" className="text-white hover:text-black" activeClassName="font-bold">
+								<Link activeClass="active" to="contact" spy={true} smooth={true} offset={50} duration={500}>
+									Contact
+								</Link>
+							</NavLink>
+						</div>
+					</div>
+					<div className="md:hidden">
+						<button onClick={toggleNav}>
+							{isOpen ? <X className="text-white" size="32" /> : <div className="text-white text-2xl">☰</div>}
+						</button>
+					</div>
 				</div>
-				<div className="md:hidden">
-					<button onClick={ToggleNav}>
-						{isOpen ? <X className="text-white" size="32" /> : <Menu className="text-white" size="32" />}
-					</button>
-				</div>
-			</div>
-			{isOpen && (
-				<div
-					className={`navx md:hidden transition-max-h duration-700 ease-in-out ${
-						isOpen ? 'max-h-screen' : 'max-h-0'
-					} overflow-hidden`}>
-					<NavLinks mobile={true} />
-				</div>
-			)}
-		</nav>
+			</nav>
+
+			{isOpen && <NavLinksMobile closeNav={closeNav} />}
+		</div>
 	)
 }
 
