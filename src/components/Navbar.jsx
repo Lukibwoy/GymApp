@@ -8,7 +8,7 @@ const NavLinksMobile = ({ closeNav }) => {
 	const mobileClasses = 'text-white hover:text-black-300 font-bold'
 
 	return (
-		<div  className="fixed top-0 right-0 w-64 h-full bg-gray-900 opacity-90 p-4 z-50 transition-transform duration-300 transform translate-x-0">
+		<div className="fixed top-0 right-0 w-64 h-full bg-gray-900 opacity-90 p-4 z-50 transition-transform duration-300 transform translate-x-0 text-center text-lg">
 			<button onClick={closeNav} className="absolute top-8 right-1">
 				<X className="text-white" size="32" />
 			</button>

@@ -15,14 +15,14 @@
     {
       "name": "Fish",
       "weightGrams": 150,
-      "caloriesKcal": 550,
+      "caloriesKcal": 650,
       "id": 4
     },
     {
       "id": 5,
       "name": "Pizza",
       "weightGrams": 300,
-      "caloriesKcal": 600
+      "caloriesKcal": 700
     },
     {
       "name": "Pasta",
