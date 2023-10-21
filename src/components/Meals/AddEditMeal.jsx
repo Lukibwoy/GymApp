@@ -10,27 +10,29 @@ export default function AddEditMeal({ updateMealsList, editingMeal, isEditing, c
 	}
 
 	const validate = values => {
-		const errors = {}
+		const errors = {};
+	  
 		if (!values.name) {
-			errors.name = 'Required'
+		  errors.name = 'Required';
+		} else if (values.name.length < 3) {
+		  errors.name = 'Name must be at least 3 characters long';
 		}
-
+	  
 		if (!values.weightGrams) {
-			errors.weightGrams = 'Required'
+		  errors.weightGrams = 'Required';
+		} else if (values.weightGrams < 0) {
+		  errors.weightGrams = 'The value must be greater than 0';
 		}
-		if (values.weightGrams < 0) {
-			errors.weightGrams = 'The value must be greater than 0'
-		}
-		if (values.caloriesKcal < 0) {
-			errors.caloriesKcal = 'The value must be greater than 0'
-		}
-
+	  
 		if (!values.caloriesKcal) {
-			errors.caloriesKcal = 'Required'
+		  errors.caloriesKcal = 'Required';
+		} else if (values.caloriesKcal < 0) {
+		  errors.caloriesKcal = 'The value must be greater than 0';
 		}
-
-		return errors
-	}
+	  
+		return errors;
+	  };
+	  
 
 	const handleSubmit = (values, { resetForm }) => {
 		if (isEditing) {

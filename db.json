@@ -2,8 +2,8 @@
   "meals": [
     {
       "name": "Kebab",
-      "weightGrams": 300,
-      "caloriesKcal": 600,
+      "weightGrams": 100,
+      "caloriesKcal": 400,
       "id": 1
     },
     {
@@ -25,19 +25,13 @@
       "caloriesKcal": 700
     },
     {
-      "name": "Pasta",
-      "weightGrams": 500,
-      "caloriesKcal": 800,
-      "id": 6
-    },
-    {
-      "name": "Chipsy",
+      "name": "Spaghetti",
       "weightGrams": 200,
-      "caloriesKcal": 300,
+      "caloriesKcal": 600,
       "id": 8
     },
     {
-      "name": "Frytki",
+      "name": "Chicken",
       "weightGrams": 300,
       "caloriesKcal": 400,
       "id": 10
