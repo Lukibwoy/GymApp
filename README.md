@@ -1,6 +1,6 @@
 # GymApp
 
-GymApp is a web application for managing your workouts and fitness routine. It helps you keep track of your exercises, set goals, and monitor your progress.
+GymApp is a web application for managing your nutrition plans. It helps you keep track of your diet goals.
 
 ## Features
 
@@ -28,3 +28,6 @@ GymApp is a web application for managing your workouts and fitness routine. It h
 - npm start
 
 ## Screenshots
+
+![obraz](https://github.com/Lukibwoy/GymApp/assets/86016888/98d07c03-bacb-4a62-a129-3116428e91c0)
+
