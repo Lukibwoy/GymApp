@@ -16,6 +16,8 @@ GymApp is a web application for managing your nutrition plans. It helps you keep
 - Framer Motion
 - TailwindCss
 - jest
+- React Hook Form
+- Axios
 - json-server
 
 
