@@ -4,7 +4,7 @@ import man1 from '../images/man1.webp'
 import man2 from '../images/man2.webp'
 import man3 from '../images/man3.webp'
 function Goal({ caloricNeeds, setCaloricNeeds }) {
-	const [selectedPlan, setSelectedPlan] = useState(false)
+	const [selectedPlan, setSelectedPlan] = useState('Gain Muscle Mass')
 	const [weight, setWeight] = useState('')
 	const [age, setAge] = useState('')
 	const initialValues = {
@@ -16,7 +16,7 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 	const validate = values => {
 		const errors = {}
 
-		if (!values.weight) {
+		if (!values.weight) {	
 			errors.weight = 'Required'
 		}
 		if (!values.age) {
@@ -63,7 +63,14 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 			<div className="w-full h-full plans flex flex-col justify-center items-center  md:flex-row">
 				<div className="plan flex flex-col">
 					<img src={man3} className="w-1/4" alt="lose weight" />
-					<input type="radio" id="loseWeight" name="selectedPlan" value="Lose weight" onChange={handlePlanChange} />
+					<input
+						type="radio"
+						id="loseWeight"
+						name="selectedPlan"
+						value="Lose weight"
+						onChange={handlePlanChange}
+						checked={selectedPlan == 'Lose weight'}
+					/>
 
 					<label htmlFor="loseWeight">Lose weight </label>
 				</div>
@@ -75,12 +82,20 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 						name="selectedPlan"
 						value="Gain Muscle Mass"
 						onChange={handlePlanChange}
+						checked={selectedPlan == 'Gain Muscle Mass'}
 					/>
 					<label htmlFor="gainMuscle">Gain Muscle Mass</label>
 				</div>
 				<div className="plan flex flex-col">
 					<img src={man2} className="w-1/4" alt="lose weight" />
-					<input type="radio" id="getShredded" name="selectedPlan" value="Get Shredded" onChange={handlePlanChange} />
+					<input
+						type="radio"
+						id="getShredded"
+						name="selectedPlan"
+						value="Get Shredded"
+						onChange={handlePlanChange}
+						checked={selectedPlan == 'Get Shredded'}
+					/>
 					<label htmlFor="getShredded">Get Shredded</label>
 				</div>
 			</div>
@@ -88,22 +103,6 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 				<Formik initialValues={initialValues} validate={validate} onSubmit={calculateCaloricNeeds}>
 					{() => (
 						<Form>
-							{/* <div className="plans flex flex-col justify-center items-center md:flex-row">
-								<div className="plan flex flex-col">
-									<Field type="radio" id="loseWeight" name="selectedPlan" value="Lose weight" onKeyUp={handlePlanChange} />
-									<label htmlFor="loseWeight">Lose weight</label>
-								</div>
-								<div className="plan flex flex-col">
-									<Field type="radio" id="gainMuscle" name="selectedPlan" value="Gain Muscle Mass" onKeyUp={handlePlanChange} />
-									<label htmlFor="gainMuscle">Gain Muscle Mass</label>
-								</div>
-								<div className="plan flex flex-col">
-									<Field type="radio" id="getShredded" name="selectedPlan" value="Get Shredded" onKeyUp={handlePlanChange} />
-									<label htmlFor="getShredded">Get Shredded</label>
-								</div>
-							</div>
-							<ErrorMessage name="plan" component="div" className="text-red-600" /> */}
-
 							<div className="input-fields space-y-2 flex items-center flex-col">
 								<label htmlFor="weight" className="text-white ">
 									Weight (in kg):{' '}
@@ -140,7 +139,9 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 				Calculate Caloric Demand
 			</button>
 			{caloricNeeds !== null && (
-				<div className="text-white mt-4 text-xl text-center">Your estimated caloric needs {caloricNeeds} kcal per day</div>
+				<div className="text-white mt-4 text-xl text-center">
+					Your estimated caloric needs {caloricNeeds} kcal per day
+				</div>
 			)}
 		</div>
 	)
