@@ -37,7 +37,7 @@ export default function AddEditMeal({ updateMealsList, editingMeal, isEditing, c
 	const handleSubmit = (values, { resetForm }) => {
 		if (isEditing) {
 			axios
-				.put(`http://localhost:3020/meals/${editingMeal.id}`, values)
+				.put(`https://db-json-livid.vercel.app/meals${editingMeal.id}`, values)
 				.then(response => {
 					console.log(response)
 					updateMealsList(response.data)
@@ -48,7 +48,7 @@ export default function AddEditMeal({ updateMealsList, editingMeal, isEditing, c
 				})
 		} else {
 			axios
-				.post('http://localhost:3020/meals', values)
+				.post('https://db-json-livid.vercel.app/meals', values)
 				.then(response => {
 					console.log(response)
 					updateMealsList(response.data)

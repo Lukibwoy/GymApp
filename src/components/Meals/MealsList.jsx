@@ -11,7 +11,7 @@ export default function Meals({ caloricNeeds }) {
 	const updateMealsList = newMeal => {
 		if (isEditing) {
 			axios
-				.put(`http://localhost:3020/meals/${editingMeal.id}`, newMeal)
+				.put(`https://db-json-livid.vercel.app/meals${editingMeal.id}`, newMeal)
 				.then(response => {
 					console.log(response)
 					setEditingMeal(null)
@@ -23,7 +23,7 @@ export default function Meals({ caloricNeeds }) {
 				})
 		} else {
 			axios
-				.post('http://localhost:3020/meals', newMeal)
+				.post('https://db-json-livid.vercel.app/meals', newMeal)
 				.then(response => {
 					console.log(response)
 					refreshMealsList()
@@ -37,7 +37,7 @@ export default function Meals({ caloricNeeds }) {
 
 	const refreshMealsList = () => {
 		axios
-			.get('http://localhost:3020/meals')
+			.get('https://db-json-livid.vercel.app/meals')
 			.then(res => {
 				console.log(res)
 				setMeals(res.data)
@@ -63,7 +63,7 @@ export default function Meals({ caloricNeeds }) {
 
 	const deleteMeal = mealId => {
 		axios
-			.delete(`http://localhost:3020/meals/${mealId}`)
+			.delete(`https://db-json-livid.vercel.app/meals/${mealId}`)
 			.then(res => {
 				console.log('Posiłek usunięty:', res)
 				refreshMealsList()

@@ -20,21 +20,27 @@
     },
     {
       "id": 5,
-      "name": "Pizza",
+      "name": "Margharizta",
       "weightGrams": 300,
       "caloriesKcal": 700
     },
     {
-      "name": "Spaghetti",
-      "weightGrams": 200,
-      "caloriesKcal": 600,
+      "name": "Quritto",
+      "weightGrams": 170,
+      "caloriesKcal": 520,
       "id": 8
     },
     {
-      "name": "Chicken",
-      "weightGrams": 300,
-      "caloriesKcal": 400,
-      "id": 10
+      "name": "Quritto",
+      "weightGrams": 180,
+      "caloriesKcal": 520,
+      "id": 8
+    },
+    {
+      "name": "wwwwa",
+      "weightGrams": 2,
+      "caloriesKcal": 2,
+      "id": 9
     }
   ]
 }
