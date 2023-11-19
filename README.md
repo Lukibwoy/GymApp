@@ -2,9 +2,6 @@
 
 GymApp is a web application for managing your nutrition plans. It helps you keep track of your diet goals.
 
-## Live
-- https://nutritionmanager.netlify.app/
-- 
 ## Features
 
 - Allows diet management
@@ -30,8 +27,9 @@ GymApp is a web application for managing your nutrition plans. It helps you keep
 - npm install
 - json-server --watch db.json --port 3020
 - npm start
-- 
 
+## Live
+- https://nutritionmanager.netlify.app/
 
 ## Screenshots
 
