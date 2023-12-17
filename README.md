@@ -33,7 +33,7 @@ GymApp is a web application for managing your nutrition plans. It helps you keep
 
 ## Screenshots
 
-![obraz](https://github.com/Lukibwoy/GymApp/assets/86016888/98d07c03-bacb-4a62-a129-3116428e91c0)   
+![obraz](https://github.com/Lukibwoy/GymApp/assets/86016888/98d07c03-bacb-4a62-a129-3116428e91c0)
 ![obraz](https://github.com/Lukibwoy/GymApp/assets/86016888/ca67b794-62d1-47b8-9d8f-5601dd34b49d)
 ![obraz](https://github.com/Lukibwoy/GymApp/assets/86016888/44ed50da-f1c7-4e8d-8a71-bb4a4e9b1f01)
 ![obraz](https://github.com/Lukibwoy/GymApp/assets/86016888/cb9de33d-9826-4df9-addb-cd88b0f3ac0f)
