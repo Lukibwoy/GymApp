@@ -24,26 +24,26 @@ export default function Home() {
 	const [caloricNeeds, setCaloricNeeds] = useState(null)
 
 	return (
-		<div id='home'>
-			<div  className="w-full h-scren bg-gradient-to-r from-violet-800 bg-white-500 flex justify-center flex-col items-center bg-gray-900  md:flex-row">
-				<div className="w-2/3 md:w-1/2 md:ml-20">
-					<h1 className="text-5xl md:text-7xl  font-bold text-white">
+		<div id="home">
+			<div className="w-full h-full  flex justify-between flex-col items-center  md:flex-row">
+				<div className="w-2/3 md:w-3/5 md:ml-20 h-full">
+					<h1 className="text-5xl md:text-7xl xxl:text-8xl font-bold text-white">
 						<span>{typeEffect}</span>
 						<br />
 						Assistant
 					</h1>
-					<p className="mt-5 text-white text-lg md:text-xl">
+					<p className="mt-5 text-white text-lg md:text-xl xl:text-2xl">
 						In here we will help you to shape and build your ideal body and live up your life to fullest
 					</p>
 					<button
 						onClick={handleClick}
-						class="bg-yellow-500 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-xl mt-10">
+						class="bg-yellow-500 hover:bg-yellow-700 text-gray-900 font-bold xl:text-xl xl:py-4 xl:px-8 py-2 px-4  rounded-xl mt-10 ">
 						Get Started
 					</button>
 				</div>
-				<div className=" w-full sm:w-1/2 h-full ">
+				<div className=" w-full md:w-3/5 h-full flex">
 					<img
-						className="header-photo w-full md:w-4/6 h-full object-cover mt-10 shadow-2xl opacity-80 "
+						className="header-photo w-full md:w-4/6 h-full md:ml-40 object-cover mt-10 shadow-2xl opacity-80 "
 						src={headerPhoto}
 						alt="man muscles"
 					/>

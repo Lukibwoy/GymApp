@@ -16,7 +16,7 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 	const validate = values => {
 		const errors = {}
 
-		if (!values.weight) {	
+		if (!values.weight) {
 			errors.weight = 'Required'
 		}
 		if (!values.age) {
@@ -59,7 +59,7 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 	}
 
 	return (
-		<div className="w-full h-full bg-gradient-to-r from-violet-800 to-white-500 flex items-center flex-col bg-gray-900 overflow-hidden">
+		<div className="w-full h-full  flex items-center flex-col  overflow-hidden">
 			<div className="w-full h-full plans flex flex-col justify-center items-center  md:flex-row">
 				<div className="plan flex flex-col">
 					<img src={man3} className="w-1/4" alt="lose weight" />
@@ -69,7 +69,7 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 						name="selectedPlan"
 						value="Lose weight"
 						onChange={handlePlanChange}
-						checked={selectedPlan == 'Lose weight'}
+						checked={selectedPlan === 'Lose weight'}
 					/>
 
 					<label htmlFor="loseWeight">Lose weight </label>
@@ -82,7 +82,7 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 						name="selectedPlan"
 						value="Gain Muscle Mass"
 						onChange={handlePlanChange}
-						checked={selectedPlan == 'Gain Muscle Mass'}
+						checked={selectedPlan === 'Gain Muscle Mass'}
 					/>
 					<label htmlFor="gainMuscle">Gain Muscle Mass</label>
 				</div>
@@ -94,7 +94,7 @@ function Goal({ caloricNeeds, setCaloricNeeds }) {
 						name="selectedPlan"
 						value="Get Shredded"
 						onChange={handlePlanChange}
-						checked={selectedPlan == 'Get Shredded'}
+						checked={selectedPlan === 'Get Shredded'}
 					/>
 					<label htmlFor="getShredded">Get Shredded</label>
 				</div>

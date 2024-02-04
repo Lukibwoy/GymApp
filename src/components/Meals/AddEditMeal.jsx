@@ -10,34 +10,33 @@ export default function AddEditMeal({ updateMealsList, editingMeal, isEditing, c
 	}
 
 	const validate = values => {
-		const errors = {};
-	  
+		const errors = {}
+
 		if (!values.name) {
-		  errors.name = 'Required';
+			errors.name = 'Required'
 		} else if (values.name.length < 3) {
-		  errors.name = 'Name must be at least 3 characters long';
+			errors.name = 'Name must be at least 3 characters long'
 		}
-	  
+
 		if (!values.weightGrams) {
-		  errors.weightGrams = 'Required';
+			errors.weightGrams = 'Required'
 		} else if (values.weightGrams < 0) {
-		  errors.weightGrams = 'The value must be greater than 0';
+			errors.weightGrams = 'The value must be greater than 0'
 		}
-	  
+
 		if (!values.caloriesKcal) {
-		  errors.caloriesKcal = 'Required';
+			errors.caloriesKcal = 'Required'
 		} else if (values.caloriesKcal < 0) {
-		  errors.caloriesKcal = 'The value must be greater than 0';
+			errors.caloriesKcal = 'The value must be greater than 0'
 		}
-	  
-		return errors;
-	  };
-	  
+
+		return errors
+	}
 
 	const handleSubmit = (values, { resetForm }) => {
 		if (isEditing) {
 			axios
-				.put(`http://localhost:3020/meals/${editingMeal.id}`, values)
+				.put(`https://db-json-livid.vercel.app/meals${editingMeal.id}`, values)
 				.then(response => {
 					console.log(response)
 					updateMealsList(response.data)
@@ -48,7 +47,7 @@ export default function AddEditMeal({ updateMealsList, editingMeal, isEditing, c
 				})
 		} else {
 			axios
-				.post('http://localhost:3020/meals', values)
+				.post('https://db-json-livid.vercel.app/meals', values)
 				.then(response => {
 					console.log(response)
 					updateMealsList(response.data)
