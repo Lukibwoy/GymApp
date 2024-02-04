@@ -51,17 +51,17 @@ const Navbar = () => {
 					<Logo />
 					<div className="md:flex hidden">
 						<div className="flex space-x-20 mr-20">
-							<NavLink to="/" className="text-white hover:text-black" activeClassName="font-bold">
+							<NavLink to="/" className="text-white hover:text-black md:text-xl" activeClassName="font-bold">
 								<Link activeClass="active" to="/" spy={true} smooth={true} offset={50} duration={500}>
 									Home
 								</Link>
 							</NavLink>
-							<NavLink to="/plans" className="text-white hover:text-black" activeClassName="font-bold">
+							<NavLink to="/plans" className="text-white hover:text-black md:text-xl" activeClassName="font-bold">
 								<Link activeClass="active" to="plans" spy={true} smooth={true} offset={50} duration={500}>
 									Plans
 								</Link>
 							</NavLink>
-							<NavLink to="/contact" className="text-white hover:text-black" activeClassName="font-bold">
+							<NavLink to="/contact" className="text-white hover:text-black md:text-xl" activeClassName="font-bold">
 								<Link activeClass="active" to="contact" spy={true} smooth={true} offset={50} duration={500}>
 									Contact
 								</Link>

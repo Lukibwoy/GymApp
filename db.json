@@ -1,46 +1,34 @@
 {
-  "meals": [
-    {
-      "name": "Kebab",
-      "weightGrams": 100,
-      "caloriesKcal": 400,
-      "id": 1
-    },
-    {
-      "id": 3,
-      "name": "Pasta",
-      "weightGrams": 200,
-      "caloriesKcal": 350
-    },
-    {
-      "name": "Fish",
-      "weightGrams": 150,
-      "caloriesKcal": 650,
-      "id": 4
-    },
-    {
-      "id": 5,
-      "name": "Margharizta",
-      "weightGrams": 300,
-      "caloriesKcal": 700
-    },
-    {
-      "name": "Quritto",
-      "weightGrams": 170,
-      "caloriesKcal": 520,
-      "id": 8
-    },
-    {
-      "name": "Quritto",
-      "weightGrams": 180,
-      "caloriesKcal": 520,
-      "id": 8
-    },
-    {
-      "name": "wwwwa",
-      "weightGrams": 2,
-      "caloriesKcal": 2,
-      "id": 9
-    }
-  ]
+	"meals": [
+		{
+			"name": "Kebab",
+			"weightGrams": 100,
+			"caloriesKcal": 400,
+			"id": 1
+		},
+		{
+			"id": 3,
+			"name": "Pasta",
+			"weightGrams": 200,
+			"caloriesKcal": 350
+		},
+		{
+			"name": "Fish",
+			"weightGrams": 150,
+			"caloriesKcal": 650,
+			"id": 4
+		},
+		{
+			"id": 5,
+			"name": "Margharizta",
+			"weightGrams": 300,
+			"caloriesKcal": 700
+		},
+		{
+			"name": "Quritto",
+			"weightGrams": 180,
+			"caloriesKcal": 520,
+			"id": 8
+		}
+	]
 }
