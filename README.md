@@ -1,7 +1,6 @@
 # GymApp
 
-GymApp is a web application for managing your nutrition plans. It helps you keep track of your diet goal
-
+GymApp is a web application for managing your nutrition plans. It helps you keep track of your diet goa
 ## Features
 
 - Allows diet management
