@@ -76,7 +76,7 @@ export default function Meals({ caloricNeeds }) {
 	return (
 		<div className="w-full h-3/4  overflow-hidden md:flex-row">
 			<div className="flex justify-center flex-col items-center mt-20 md:flex-row">
-				<table className="table-auto bg-white shadow-lg rounded-lg w-2/5 md:w-4/6 h-1/5 table-layout: auto;">
+				<table className="table-auto  bg-white shadow-lg  rounded-lg w-2/5 md:w-4/6 h-1/5 table-layout:auto">
 					<thead>
 						<tr>
 							<th className="px-1 md:px-4 md:py-2 border-b">Meal Name</th>

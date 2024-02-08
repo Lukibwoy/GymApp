@@ -27,7 +27,7 @@ export default function Home() {
 		<div id="home">
 			<div className="w-full h-full  flex justify-between flex-col items-center  md:flex-row">
 				<div className="w-2/3 md:w-3/5 md:ml-20 h-full">
-					<h1 className="text-5xl md:text-7xl xxl:text-8xl font-bold text-white">
+					<h1 className="text-5xl md:text-6xl xxl:text-8xl font-bold text-white">
 						<span>{typeEffect}</span>
 						<br />
 						Assistant
@@ -37,11 +37,11 @@ export default function Home() {
 					</p>
 					<button
 						onClick={handleClick}
-						class="bg-yellow-500 hover:bg-yellow-700 text-gray-900 font-bold xl:text-xl xl:py-4 xl:px-8 py-2 px-4  rounded-xl mt-10 ">
+						class="bg-yellow-500 hover:bg-yellow-700 text-gray-900 font-bold md:text-lg xxl:text-xl xxl:py-4 xxl:px-8 py-2 px-4  rounded-xl mt-10 ">
 						Get Started
 					</button>
 				</div>
-				<div className=" w-full md:w-3/5 h-full flex">
+				<div className=" w-full xl:w-3/5 h-full flex">
 					<img
 						className="header-photo w-full md:w-4/6 h-full md:ml-40 object-cover mt-10 shadow-2xl opacity-80 "
 						src={headerPhoto}
